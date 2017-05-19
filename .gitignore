@@ -1,8 +1,6 @@
-#ignore virtual env
 ./bin
 ./lib
 ./include
 ./pyvenv.cfg
 
-#pip cruft
 ./pip-selfcheck.json
