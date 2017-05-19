@@ -1,6 +1,8 @@
-./bin
-./lib
-./include
-./pyvenv.cfg
+#virtualenv stuff
+bin
+lib
+include
+pyvenv.cfg
 
-./pip-selfcheck.json
+#pip cruft
+pip-selfcheck.json
