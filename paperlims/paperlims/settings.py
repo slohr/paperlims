@@ -15,6 +15,12 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+APP = 'core'
+
+SITE_ROOT = BASE_DIR + '/'+ APP + '/'
+
+LOGGING_ROOT = SITE_ROOT + '/logs/'
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -37,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'widget-tweaks',
+    'core'
 ]
 
 MIDDLEWARE = [
@@ -73,12 +81,37 @@ WSGI_APPLICATION = 'paperlims.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
+
+LOCAL_DATABASES = { 
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'seymour',
+        'USER': 'audrey',
+        'PASSWORD': 'audrey',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }   
 }
+
+PROD_DATABASES = { 
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'seymour',
+        'USER': 'audrey',
+        'PASSWORD': 'super_secret',
+        'HOST': 'some.aws.rds.instance',
+        'PORT': '5432',
+    }   
+}
+
+
+DATABASES = LOCAL_DATABASES
 
 
 # Password validation
@@ -118,3 +151,54 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'standard': {
+            'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+            'datefmt' : "%d/%b/%Y %H:%M:%S"
+        },
+    },
+    'handlers': {
+        'null': {
+            'level':'DEBUG',
+            'class':'logging.NullHandler',
+        },
+        'logfile': {
+            'level':'DEBUG',
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': LOGGING_ROOT + "/logfile.log",
+            'maxBytes': 50000,
+            'backupCount': 2,
+            'formatter': 'standard',
+        },
+        'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+            'formatter': 'standard'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers':['console'],
+            'propagate': True,
+            'level':'DEBUG',
+        },
+        'django.db.backends': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'audrey': {
+            'handlers': ['console', 'logfile'],
+            'level': 'DEBUG',
+        },
+        'django_js_routing': {
+            'handlers': ['console', 'logfile'],
+            'level': 'DEBUG',
+        },
+
+    }
+}
