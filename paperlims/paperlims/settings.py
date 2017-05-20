@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'widget-tweaks',
+    'widget_tweaks',
     'core'
 ]
 
@@ -91,9 +91,9 @@ WSGI_APPLICATION = 'paperlims.wsgi.application'
 LOCAL_DATABASES = { 
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'seymour',
-        'USER': 'audrey',
-        'PASSWORD': 'audrey',
+        'NAME': 'paperlims',
+        'USER': 'paperplane',
+        'PASSWORD': 'nodeadtrees',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }   
@@ -102,8 +102,8 @@ LOCAL_DATABASES = {
 PROD_DATABASES = { 
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'seymour',
-        'USER': 'audrey',
+        'NAME': 'paperlims',
+        'USER': 'paperplane',
         'PASSWORD': 'super_secret',
         'HOST': 'some.aws.rds.instance',
         'PORT': '5432',

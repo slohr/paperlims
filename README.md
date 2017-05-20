@@ -71,3 +71,23 @@ You should be able to connect like so
 psql -U paperplane paperlims -P
 ```
 
+
+Initialize DB
+-------------
+
+```
+./manage migrate
+```
+
+Create superuser
+
+*I typically use __admin:justusepaper__*
+
+```
+./manage.py createsuperuser
+Username (leave blank to use 'slohr'): admin
+Email address: admin@dev.null
+Password: 
+Password (again): 
+Superuser created successfully.
+```
