@@ -10,6 +10,7 @@ EXPERIMENT = "Experiment"
 
 DATA_FILE_FOLDER = "datafiles/"
 
+SITE_NAME = "PaperLIMS"
 
 INTERNAL = "internal"
 EXTERNAL = "external"

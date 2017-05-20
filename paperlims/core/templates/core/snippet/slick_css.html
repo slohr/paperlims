@@ -1,0 +1,29 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" href="{% static 'external/SlickGrid-2.3.6/slick.grid.css' %}" type="text/css"/>
+<link rel="stylesheet" href="{% static 'external/SlickGrid-2.3.6/slick-default-theme.css' %}" type="text/css"/>
+
+<style>
+    .slick-header.ui-state-default, .slick-headerrow.ui-state-default {
+      width: 100%;
+      overflow: hidden;
+      border-left: 0px !important;
+    }
+
+    .slick-header-column.ui-state-default {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+      height: 26px;
+      line-height: 26px;
+      margin: 0;
+      padding: 4px;
+      border-right: 1px solid silver;
+      border-left: 0px !important;
+      border-top: 0px !important;
+      border-bottom: 0px !important;
+      float: left;
+    }
+</style>
