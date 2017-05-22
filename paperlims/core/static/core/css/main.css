@@ -4,7 +4,12 @@ make sure this CSS is loaded after bootstrap or any library CSS so that override
 https://bootstrapbay.com/blog/customize-bootstrap/
 */
 
-body {
+/* apply a natural box layout model to all elements */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+html, body {
+    border: 0; margin: 0; padding: 0; height: 100%;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
 }
 
 /*
@@ -106,6 +111,7 @@ used on login page
 .editor-preview, .editor-preview-side {
 	background: white;
 }
+
 /* Dropzone JS overrides */
 .dropzone {
     border: 2px dashed #0087F7;
