@@ -7,12 +7,17 @@ Data Files
 
 {% block navstop %}datafiles{% endblock %}
 
-{% block js %}
+{% block plugin-library-js %}
     {{ block.super }}
 
     <script src="{% static 'core/js/dropzone.js' %}" type="text/javascript"></script>
-    <script src="{% static 'core/js/datafiles/list.js' %}" type="text/javascript"></script>
 
+
+{% endblock %}
+
+{% block custom-js %}
+    {{ block.super }}
+    <script src="{% static 'core/js/datafiles/list.js' %}" type="text/javascript"></script>
 {% endblock %}
 
 {% block content %}
