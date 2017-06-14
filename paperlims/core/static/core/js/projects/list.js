@@ -34,12 +34,13 @@
     ];
 
     var grid_options = {
-        editable: true,
+        editable: false,
         enableAddRow: false,
         enableCellNavigation: true,
         asyncEditorLoading: false,
         autoEdit: false,
         forceFitColumns: true,
+        multiSelect:false
     };
     var loadingIndicator = null;
     $(function () {
@@ -50,7 +51,15 @@
             var vp = grid.getViewport();
             list_loader.fetchData(vp.top, vp.bottom);
         });
-        grid.setSelectionModel(new Slick.CellSelectionModel());
+
+        var rowSelection = new Slick.RowSelectionModel();
+
+        grid.setSelectionModel(rowSelection);
+
+        grid.onSelectedRowsChanged.subscribe(function(e,args) {
+            var selectedRows = grid.getSelectedRows();
+            console.log(selectedRows);
+        });
 
         grid.onCellChange.subscribe(function (e, args) {
          //({ row: number, cell: number, item: any })
