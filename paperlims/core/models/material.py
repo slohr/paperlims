@@ -27,7 +27,7 @@ class Material(PolymorphicModel, StandardModel):
     verbose_name_plural = 'materials'
     unique_together = ('name',)
 
-  def __unicode__(self):
+  def __self__(self):
     return self.name
 
   def add_material_link(self, material, link_type):
@@ -66,7 +66,7 @@ class MaterialLink(StandardModel):
     db_table = 'material_link'
     verbose_name_plural = 'material links'
 
-  def __unicode__(self):
+  def __self__(self):
     return self.name
 
 

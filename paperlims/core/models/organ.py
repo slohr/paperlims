@@ -7,6 +7,6 @@ class Organ(StandardModel):
     db_table = 'organ'
     ordering = ['-date_created']
 
-  def __unicode__(self):
+  def __self__(self):
     return self.name
 

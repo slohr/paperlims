@@ -8,7 +8,7 @@ class SiteMessage(Base):
     app_label = "core"
     db_table = 'site_message'
 
-  def __unicode__(self):
+  def __self__(self):
     return self.message
 
 

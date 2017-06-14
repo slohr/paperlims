@@ -26,5 +26,5 @@ class DataFile(Base):
 
   file = models.FileField(upload_to=get_datafile_upload_path,storage=FileSystemStorage())
 
-  def __unicode__(self):
+  def __self__(self):
         return self.filename()

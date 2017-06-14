@@ -27,7 +27,7 @@ class SampleUse(Base):
     db_table = 'sample_use'
     verbose_name_plural = 'sample use'
 
-  def __unicode__(self):
+  def __self__(self):
     return self.action
 
   def get_json(self):

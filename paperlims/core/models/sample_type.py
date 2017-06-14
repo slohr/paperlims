@@ -9,6 +9,6 @@ class SampleType(StandardModel):
     db_table = 'sample_type'
     verbose_name_plural = 'sample types'
 
-  def __unicode__(self):
+  def __self__(self):
     return self.name
 

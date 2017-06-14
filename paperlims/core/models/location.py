@@ -9,6 +9,6 @@ class Location(StandardModel):
     db_table = 'location'
     verbose_name_plural = 'locations'
 
-  def __unicode__(self):
+  def __self__(self):
     return self.name
 

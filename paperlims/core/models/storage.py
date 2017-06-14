@@ -24,7 +24,7 @@ class Storage(StandardModel):
     verbose_name_plural = 'storage'
     unique_together = ('name',)
 
-  def __unicode__(self):
+  def __self__(self):
     if self.type:
       return "{0} {1}".format(self.type.name,self.name)
     else:

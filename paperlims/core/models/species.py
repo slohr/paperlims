@@ -7,6 +7,6 @@ class Species(StandardModel):
     db_table = 'species'
     ordering = ['-date_created']
 
-  def __unicode__(self):
+  def __self__(self):
     return self.name
 

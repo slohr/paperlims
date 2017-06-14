@@ -21,7 +21,7 @@ class Attachment(Base):
   object_id = models.PositiveIntegerField()
   content_object = fields.GenericForeignKey('content_type', 'object_id')
 
-  def __unicode__(self):
+  def __self__(self):
     return self.filename()
 
 

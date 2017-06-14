@@ -25,6 +25,6 @@ class ProjectAttachment(Base):
 
   file = models.FileField(upload_to=get_upload_path)
 
-  def __unicode__(self):
+  def __self__(self):
         return self.file.url
 

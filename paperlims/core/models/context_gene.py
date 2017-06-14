@@ -16,6 +16,6 @@ class ContextGene(Base):
     ordering = ['-date_created']
     unique_together = ('gene','context')
 
-  def __unicode__(self):
+  def __self__(self):
     return "{0} {1}".format(self.gene.name,self.context)
 

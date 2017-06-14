@@ -22,7 +22,7 @@ class Well(PolymorphicModel,StandardModel):
     ordering = ['-date_created']
     unique_together = ("name","plate")
 
-  def __unicode__(self):
+  def __self__(self):
     return "{0}_{1}".format(self.plate,self.name)
 
 
@@ -33,7 +33,7 @@ class WellLink(StandardModel):
     db_table = 'well_link'
     verbose_name_plural = 'well links'
 
-  def __unicode__(self):
+  def __self__(self):
     return self.name
 
 

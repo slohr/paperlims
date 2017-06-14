@@ -38,7 +38,7 @@ class Experiment(PolymorphicModel,StandardModel):
     )
     return os.path.join(settings.SITE_ROOT,constants.EXPERIMENT_DATA_FILES,str(self.id))
 
-  def __unicode__(self):
+  def __self__(self):
         return self.name
 
   def get_absolute_url(self):

@@ -1,7 +1,3 @@
-/***
- * Contains customized SlickGrid formatters.
- *
- */
 
 (function ($) {
   // register namespace

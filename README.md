@@ -33,7 +33,6 @@ Create base pip requirments file
 ```
 echo "Django==1.11.1" >> requirements.txt
 echo "XlsxWriter==0.9.6" >> requirements.txt
-echo "argparse==1.4.1" >> requirements.txt
 echo "django-widget-tweaks==1.4.1" >> requirements.txt
 echo "psycopg2==2.7.1" >> requirements.txt
 echo "pytz==2017.2" >> requirements.txt

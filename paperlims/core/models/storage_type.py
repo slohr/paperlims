@@ -7,6 +7,6 @@ class StorageType(StandardModel):
     db_table = 'storage_type'
     verbose_name_plural = 'storage types'
 
-  def __unicode__(self):
+  def __self__(self):
     return self.name
 

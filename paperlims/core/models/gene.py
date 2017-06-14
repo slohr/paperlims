@@ -11,6 +11,6 @@ class Gene(StandardModel):
     ordering = ['-date_created']
     unique_together = ('name',)
 
-  def __unicode__(self):
+  def __self__(self):
     return self.name
 

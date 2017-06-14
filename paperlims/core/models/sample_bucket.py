@@ -15,6 +15,6 @@ class SampleBucket(StandardModel):
     db_table = 'sample_bucket'
     verbose_name_plural = 'sample buckets'
 
-  def __unicode__(self):
+  def __self__(self):
     return self.name
 

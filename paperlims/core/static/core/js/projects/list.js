@@ -6,39 +6,85 @@
           return {valid: true, msg: null};
         }
     }
+
+    var list_loader = new CoreSlick.Data.RemoteModel({
+        geturl:Urls.projects_json()
+    });
+
     var grid;
-    var data = [];
+
     var columns = [
-        {id: "project", name: "Project", field: "project", width: 120, cssClass: "cell-title", editor: Slick.Editors.Text, validator: requiredFieldValidator},
-        {id: "desc", name: "Description", field: "description", width: 100, editor: Slick.Editors.LongText}
+        {
+            id: "name",
+            name: "Name",
+            field: "name",
+            width: 120,
+            cssClass: "cell-title",
+            saveOnEdit: true,
+            editor: Slick.Editors.Text,
+            validator: requiredFieldValidator
+        },
+        {
+            id: "description",
+            name: "Description",
+            field: "description",
+            width: 100,
+            editor: Slick.Editors.LongText
+        }
     ];
 
-    var options = {
+    var grid_options = {
         editable: true,
-        enableAddRow: true,
+        enableAddRow: false,
         enableCellNavigation: true,
         asyncEditorLoading: false,
         autoEdit: false,
-        forceFitColumns: true
+        forceFitColumns: true,
     };
-
+    var loadingIndicator = null;
     $(function () {
-        for (var i = 0; i < 500; i++) {
-          var d = (data[i] = {});
-          d["project"] = "Project " + i;
-          d["description"] = "This is a description.\n  It can be multiline";
-        }
-        grid = new Slick.Grid("#myGrid", data, columns, options);
-        grid.setSelectionModel(new Slick.CellSelectionModel());
-        grid.onAddNewRow.subscribe(function (e, args) {
-          var item = args.item;
-          grid.invalidateRow(data.length);
-          data.push(item);
-          grid.updateRowCount();
-          grid.render();
+        var ttp = [];
+        grid = new Slick.Grid("#myGrid", list_loader.data, columns, grid_options);
+        $("#myGrid").data('slickgrid', grid);
+        grid.onViewportChanged.subscribe(function (e, args) {
+            var vp = grid.getViewport();
+            list_loader.fetchData(vp.top, vp.bottom);
         });
+        grid.setSelectionModel(new Slick.CellSelectionModel());
+
         grid.onCellChange.subscribe(function (e, args) {
          //({ row: number, cell: number, item: any })
-            console.log(args);
-         });
+            var column = args.grid.getColumns()[args.cell]
+
+            //console.log(args);
+            //console.log(column);
+            if(column.hasOwnProperty('saveOnEdit') & column.saveOnEdit) {
+                console.log("doing update");
+            }
+        });
+
+        list_loader.onDataLoading.subscribe(function () {
+            if (!loadingIndicator) {
+                loadingIndicator = $("<span class='loading-indicator'><label>Loading...</label></span>").appendTo(document.body);
+                var $g = $("#myGrid");
+                loadingIndicator
+                        .css("position", "absolute")
+                        .css("top", $g.position().top + $g.height() / 2 - loadingIndicator.height() / 2)
+                        .css("left", $g.position().left + $g.width() / 2 - loadingIndicator.width() / 2);
+            }
+            loadingIndicator.show();
+        });
+
+        list_loader.onDataLoaded.subscribe(function (e, args) {
+            console.log("inside onDataLoaded subscription");
+            for (var i = args.from; i <= args.to; i++) {
+                grid.invalidateRow(i);
+            }
+            grid.updateRowCount();
+            grid.render();
+            loadingIndicator.fadeOut();
+        });
+
+        grid.onViewportChanged.notify();
+
     })

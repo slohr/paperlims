@@ -8,7 +8,7 @@ class Source(StandardModel):
     verbose_name_plural = 'sources'
     ordering = ['name']
 
-  def __unicode__(self):
+  def __self__(self):
     return self.name
 
 

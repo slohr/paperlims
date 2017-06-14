@@ -24,7 +24,7 @@ class Plate(StandardModel):
   def full_name(self):
     return "{0}_{1}".format(self.name,self.replicate)
 
-  def __unicode__(self):
+  def __self__(self):
     return "{0}_{1}".format(self.name,self.replicate)
 
   def get_absolute_url(self):

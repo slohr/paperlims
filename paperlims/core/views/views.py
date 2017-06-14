@@ -20,9 +20,6 @@ logger = logging.getLogger(__name__)
 def index(request):
 	return render(request, 'core/index.html')
 
-def projects(request):
-    return render(request, 'core/projects/list.html')
-
 def datafiles(request):
     return render(request, 'core/datafiles/list.html')
 
