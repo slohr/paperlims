@@ -21,23 +21,36 @@ def settings_value(name):
 
 @register.filter
 def jsonify(o):
-    try:
-        so = serializers.serialize(
-            'json',
-            [o]
-        )
-        # keeps formatting but it's an array
-        #return mark_safe(json.JSONDecoder().decode(json.dumps(so)))
+    #dump out on simple types
+    if not hasattr(o, '_meta'):
+        if isinstance(o, str): return mark_safe("'{0}'".format(o))
+        if isinstance(o, int): return mark_safe("{0}".format(o))
+        return mark_safe(json.dumps(o))
 
-        so_array = json.JSONDecoder().decode(so)
-        jso = json.dumps(so_array[0])
-        return mark_safe(jso)
-    except Exception as e:
-        message = {
-            'status': 'error',
-            'message': '{0}'.format(e)
-        }
-        return mark_safe(json.dumps(message))
+    so = serializers.serialize(
+        'json',
+        [o],
+        indent=4
+    )
+
+    so_array = json.JSONDecoder().decode(so)
+    so = so_array[0]
+
+    #support either the core serializer (does pk) or
+    #rest serializer (which prefers id)
+    so['id'] = so['pk']
+    jso = json.dumps(so)
+    return mark_safe(jso)
+
+@register.filter
+def format_constants(c):
+    properties = dir(c)
+    output = dict()
+    for property in properties:
+        if property.isupper():
+            output[property] = getattr(c, property)
+
+    return mark_safe(json.dumps(output))
 
 @register.filter
 def forwardsort(o):

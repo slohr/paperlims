@@ -43,6 +43,7 @@
         multiSelect:false
     };
     var loadingIndicator = null;
+
     $(function () {
         var ttp = [];
         grid = new Slick.Grid("#myGrid", list_loader.data, columns, grid_options);
@@ -61,12 +62,15 @@
             console.log(selectedRows);
         });
 
+        grid.onDblClick.subscribe(function(e,args) {
+            console.log(args);
+            var row = grid.getDataItem(args.row);
+            location.href = Urls.projects_detail(row.id);
+        });
+
         grid.onCellChange.subscribe(function (e, args) {
-         //({ row: number, cell: number, item: any })
             var column = args.grid.getColumns()[args.cell]
 
-            //console.log(args);
-            //console.log(column);
             if(column.hasOwnProperty('saveOnEdit') & column.saveOnEdit) {
                 console.log("doing update");
             }
