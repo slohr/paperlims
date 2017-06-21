@@ -10,5 +10,9 @@ urlpatterns = [
 		r'^projects/',
 		include('core.urlincludes.projects')
 	),
+	url(
+		r'^experiments/',
+		include('core.urlincludes.experiments')
+	),
 
 ]

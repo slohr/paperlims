@@ -34,15 +34,15 @@ class Experiment(PolymorphicModel,StandardModel):
 
   def get_experiment_dir(self):
     utils.create_directory(
-      os.path.join(settings.SITE_ROOT,constants.EXPERIMENT_DATA_FILES,str(self.id))
+      os.path.join(settings.DATA_ROOT,constants.EXPERIMENT_DATA_FILES,str(self.id))
     )
-    return os.path.join(settings.SITE_ROOT,constants.EXPERIMENT_DATA_FILES,str(self.id))
+    return os.path.join(settings.DATA_ROOT,constants.EXPERIMENT_DATA_FILES,str(self.id))
 
   def __self__(self):
         return self.name
 
   def get_absolute_url(self):
-        return reverse('experiment-detail', kwargs={'pk': self.pk})
+        return reverse('experiments-detail', kwargs={'pk': self.pk})
 
 
   # get the next value in the sequence based on the record name

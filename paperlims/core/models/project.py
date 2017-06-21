@@ -21,4 +21,4 @@ class Project(StandardModel):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('project-detail', kwargs={'pk': self.pk})
+        return reverse('projects-detail', kwargs={'pk': self.pk})

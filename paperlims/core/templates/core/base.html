@@ -73,6 +73,7 @@
                 <ul class="nav navbar-nav">
                     <li id="home-nav"><a href="/">Home</a></li>
                     <li id="projects-nav"><a href="{% url 'projects-list' %}">Projects</a></li>
+                    <li id="projects-nav"><a href="{% url 'experiments-list' %}">Experiments</a></li>
                     <li id="datafiles-nav"><a href="{% url 'datafiles-list' %}">DataFiles</a></li>
 
                     {% if user.is_superuser %}
