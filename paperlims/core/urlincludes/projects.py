@@ -18,6 +18,12 @@ urlpatterns = [
     ),
 
     url(
+        r'^create',
+        project.ProjectCreateView.as_view(template_name="core/projects/create.html"),
+        name='projects-create'
+    ),
+
+    url(
         r'^(?P<id>[-_\w]+)/delete$',
         project.project_delete,
         name='projects-delete'

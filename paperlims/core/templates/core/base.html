@@ -73,7 +73,7 @@
                 <ul class="nav navbar-nav">
                     <li id="home-nav"><a href="/">Home</a></li>
                     <li id="projects-nav"><a href="{% url 'projects-list' %}">Projects</a></li>
-                    <li id="projects-nav"><a href="{% url 'experiments-list' %}">Experiments</a></li>
+                    <li id="experiments-nav"><a href="{% url 'experiments-list' %}">Experiments</a></li>
                     <li id="datafiles-nav"><a href="{% url 'datafiles-list' %}">DataFiles</a></li>
 
                     {% if user.is_superuser %}
@@ -107,24 +107,6 @@
     {% include "core/footer.html" %}
 
     <script>
-        // using jQuery
-        function getCookie(name) {
-            var cookieValue = null;
-            if (document.cookie && document.cookie !== '') {
-                var cookies = document.cookie.split(';');
-                for (var i = 0; i < cookies.length; i++) {
-                    var cookie = jQuery.trim(cookies[i]);
-                    // Does this cookie string begin with the name we want?
-                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                        break;
-                    }
-                }
-            }
-            return cookieValue;
-        }
-
-
       $(document).ready(function () {
         $(".navbar-nav li").removeClass("active");
         $('#{% block navstop %}home{% endblock %}-nav').addClass('active');

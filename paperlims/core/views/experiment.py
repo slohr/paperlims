@@ -52,7 +52,7 @@ def experiments(request):
 
 class ExperimentCreateView(CreateView):
     model = Experiment
-    fields = ['name', 'type', 'owner', 'description']
+    fields = ['name', 'owner', 'type','project','description']
     template_name_suffix = '_create_form'
 
     def get_initial(self):

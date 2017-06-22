@@ -119,15 +119,19 @@
 
       //data.length = Math.min(parseInt(resp.data),1000); // limitation of the API
 
+
       for (var i = 0; i < resp.data.length; i++) {
         var item = resp.data[i];
+
         data[from + i - 1] = item;
         data[from + i - 1].index = from + i;
       }
+      data.length = resp.data.length;
 
       req = null;
 
-      onDataLoaded.notify({from: from, to: to});
+      var hasData = data.length > 0 ? true : false;
+      onDataLoaded.notify({from: from, to: to, hasData: hasData});
     }
 
 

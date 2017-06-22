@@ -40,7 +40,7 @@
         asyncEditorLoading: false,
         autoEdit: false,
         forceFitColumns: true,
-        multiSelect:false
+        multiSelect:true
     };
     var loadingIndicator = null;
 
@@ -55,11 +55,26 @@
 
         var rowSelection = new Slick.RowSelectionModel();
 
+        var recordActionView = $('#recordActionView');
+        var recordActionDelete = $('#recordActionDelete');
+
         grid.setSelectionModel(rowSelection);
 
         grid.onSelectedRowsChanged.subscribe(function(e,args) {
             var selectedRows = grid.getSelectedRows();
-            console.log(selectedRows);
+
+            if(selectedRows.length===0) {
+                recordActionView.hide();
+                recordActionDelete.hide();
+            } else {
+                recordActionDelete.show();
+                if(selectedRows.length===1) {
+                    recordActionView.show();
+                } else {
+                    recordActionView.hide();
+                }
+            }
+
         });
 
         grid.onDblClick.subscribe(function(e,args) {
@@ -96,6 +111,11 @@
             grid.updateRowCount();
             grid.render();
             loadingIndicator.fadeOut();
+            if (!args.hasData) {
+                grid.invalidateAllRows();
+                var nodataIndicator = $('<div class="nodata-indicator">No Data</div>');
+                $('.grid-canvas').replaceWith(nodataIndicator);
+            }
         });
 
         grid.onViewportChanged.notify();

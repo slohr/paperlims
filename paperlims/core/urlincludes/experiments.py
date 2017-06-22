@@ -18,6 +18,12 @@ urlpatterns = [
     ),
 
     url(
+        r'^create',
+        experiment.ExperimentCreateView.as_view(template_name="core/experiments/create.html"),
+        name='experiments-create'
+    ),
+
+    url(
         r'^(?P<id>[-_\w]+)/delete$',
         experiment.experiment_delete,
         name='experiments-delete'

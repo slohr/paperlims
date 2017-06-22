@@ -501,3 +501,6 @@ TODO(slohr): figure this out
   color: #666;
 }
 
+DIV.nodata-indicator {
+    text-align: center;
+}
