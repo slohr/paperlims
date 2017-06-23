@@ -24,15 +24,13 @@ Experiments
 
 {% block content %}
 
+{% if user.is_authenticated %}
 <div class="btn-group" role="group" aria-label="...">
   <a class="btn btn-default" href="{% url 'experiments-create' %}">Create</a>
 </div>
+{% endif %}
 
-<div id="recordActions" class="btn-group pull-right" role="group" aria-label="...">
-    <button class="btn btn-default" id="recordActionView" style="display:none" onclick="view_record();">View</button>
-    <button class="btn btn-default" id="recordActionDelete" style="display:none" onclick="delete_record();">Delete</button>
-</div>
-
+<div id="mygridtoolbar" class="pull-right"></div>
 
 <div style="width:100%;">
     <div id="myGrid" class="grid" style="width:100%;height:500px; "></div>

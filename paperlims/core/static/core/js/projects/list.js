@@ -55,27 +55,26 @@
 
         var rowSelection = new Slick.RowSelectionModel();
 
-        var recordActionView = $('#recordActionView');
-        var recordActionDelete = $('#recordActionDelete');
-
         grid.setSelectionModel(rowSelection);
 
-        grid.onSelectedRowsChanged.subscribe(function(e,args) {
+        var gridToolbar = new CoreSlick.GridToolbar("#mygridtoolbar");
+
+        gridToolbar.onViewPressed.subscribe(function(e,args) {
+            console.log("view pressed");
             var selectedRows = grid.getSelectedRows();
+            var row = grid.getDataItem(selectedRows[0]);
+            location.href = Urls.projects_detail(row.id);
 
-            if(selectedRows.length===0) {
-                recordActionView.hide();
-                recordActionDelete.hide();
-            } else {
-                recordActionDelete.show();
-                if(selectedRows.length===1) {
-                    recordActionView.show();
-                } else {
-                    recordActionView.hide();
-                }
-            }
-
+            console.log(selectedRows);
         });
+
+        gridToolbar.onDeletePressed.subscribe(function(e,args) {
+            console.log("delete pressed");
+            var selectedRows = grid.getSelectedRows();
+            console.log(selectedRows);
+        });
+
+        grid.registerPlugin(gridToolbar);
 
         grid.onDblClick.subscribe(function(e,args) {
             console.log(args);

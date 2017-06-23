@@ -17,7 +17,7 @@ class LabelFormat(StandardModel):
     db_table = 'label_format'
     verbose_name_plural = 'label formats'
 
-  def __self__(self):
+  def __str__(self):
     return self.name
 
 

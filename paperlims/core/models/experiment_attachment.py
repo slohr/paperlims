@@ -25,7 +25,7 @@ class ExperimentAttachment(Base):
 
   file = models.FileField(upload_to=get_upload_path)
 
-  def __self__(self):
+  def __str__(self):
         return self.file.url
 
 

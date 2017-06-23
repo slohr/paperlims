@@ -26,7 +26,7 @@ class ExperimentDataFile(PolymorphicModel,Base):
 
   file = models.FileField(upload_to=get_upload_path,storage=UniqueFileSystemStorage())
 
-  def __self__(self):
+  def __str__(self):
         return self.filename()
 
 

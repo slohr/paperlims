@@ -11,7 +11,7 @@ class RecordNote(Base):
     app_label = "core"
     db_table = 'record_note'
 
-  def __self__(self):
+  def __str__(self):
     return self.note
 
 

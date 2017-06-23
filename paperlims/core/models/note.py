@@ -22,7 +22,7 @@ class Note(Base):
   object_id = models.PositiveIntegerField()
   content_object = fields.GenericForeignKey('content_type', 'object_id')
 
-  def __self__(self):
+  def __str__(self):
     return self.note
 
   def get_json(self):

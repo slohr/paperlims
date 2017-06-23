@@ -68,7 +68,7 @@ class Sample(PolymorphicModel, CaseInsensitiveNamedModel):
         self.name = Sample.name_generator()
     super(Sample, self).save(*args, **kwargs)
 
-  def __self__(self):
+  def __str__(self):
     return self.name
 
   def add_sample_link(self, sample, link_type):
@@ -155,7 +155,7 @@ class SampleLink(StandardModel):
     db_table = 'sample_link'
     verbose_name_plural = 'sample links'
 
-  def __self__(self):
+  def __str__(self):
     return self.name
 
 

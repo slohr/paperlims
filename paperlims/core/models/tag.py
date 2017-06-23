@@ -8,6 +8,6 @@ class Tag(CaseInsensitiveNamedModel):
     unique_together = ('name',)
     ordering = ['-date_created']
 
-  def __self__(self):
+  def __str__(self):
     return self.name
 

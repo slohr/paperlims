@@ -18,6 +18,6 @@ class Printer(StandardModel):
     db_table = 'printer'
     verbose_name_plural = 'printers'
 
-  def __self__(self):
+  def __str__(self):
     return "{0}({1})".format(self.name,self.address)
 

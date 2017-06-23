@@ -15,10 +15,14 @@ from core.services import data_file_service
 from core.models import Project
 from core.models import DataFile
 
+from privateviews.decorators import login_not_required
+
 logger = logging.getLogger(__name__)
+
 
 def index(request):
 	return render(request, 'core/index.html')
+
 
 def datafiles(request):
     return render(request, 'core/datafiles/list.html')
