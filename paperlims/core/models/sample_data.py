@@ -7,19 +7,20 @@ from core.models import Project
 
 
 from django.contrib.contenttypes import fields
+from django.contrib.postgres.fields import JSONField
 
 import json
 
-class SampleUse(Base):
+class SampleData(Base):
   sample = models.ForeignKey(Sample)
-  project = models.ForeignKey(Project,null=True,blank=True)
-  action = models.TextField()
+  data = JSONField()
   notes = fields.GenericRelation(Note)
+
 
   class Meta:
     app_label = "core"
-    db_table = 'sample_use'
-    verbose_name_plural = 'sample use'
+    db_table = 'sample_data'
+    verbose_name_plural = 'sample data'
 
   def __str__(self):
     return self.action

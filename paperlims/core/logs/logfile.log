@@ -1,0 +1,93 @@
+[26/Jun/2017 22:10:03] DEBUG [core.views.data_file:153] Parsing primer pair file
+[26/Jun/2017 22:10:03] DEBUG [core.services.data_file_service:18] 0 name
+[26/Jun/2017 22:10:03] DEBUG [core.services.data_file_service:18] 1 status
+[26/Jun/2017 22:10:03] DEBUG [core.services.data_file_service:18] 2 lot
+[26/Jun/2017 22:10:03] DEBUG [core.services.data_file_service:18] 3 description
+[26/Jun/2017 22:10:03] DEBUG [core.services.data_file_service:18] 4 volume
+[26/Jun/2017 22:10:03] DEBUG [core.services.data_file_service:18] 5 concentration
+[26/Jun/2017 22:10:03] DEBUG [core.services.data_file_service:18] 6 concentration_units
+[26/Jun/2017 22:10:03] DEBUG [core.services.data_file_service:18] 7 material
+[26/Jun/2017 22:10:03] DEBUG [core.services.data_file_service:18] 8 unit_count
+[26/Jun/2017 22:10:03] DEBUG [core.services.data_file_service:18] 9 comments
+[26/Jun/2017 22:10:03] DEBUG [core.services.data_file_service:34] {'name': 0, 'status': 1, 'lot': 2, 'description': 3, 'volume': 4, 'concentration': 5, 'concentration_units': 6, 'material': 7, 'unit_count': 8, 'comments': 9}
+[26/Jun/2017 22:10:03] DEBUG [core.services.data_file_service:38] [text:'sample_1', text:'active', text:'x', empty:'', text:'5 mL', empty:'', empty:'', empty:'', empty:'', text:'sample_1 comment']
+[26/Jun/2017 22:10:03] DEBUG [core.services.data_file_service:38] [text:'sample_2', text:'active', text:'x', text:'no other data', empty:'', empty:'', empty:'', empty:'', empty:'', empty:'']
+[26/Jun/2017 22:10:03] DEBUG [core.services.data_file_service:38] [text:'sample_3', text:'active', text:'y', empty:'', empty:'', empty:'', empty:'', empty:'', empty:'', text:'sample_3 has some comments too']
+[26/Jun/2017 22:10:03] DEBUG [core.services.data_file_service:38] [text:'sample_4', text:'active', text:'y', empty:'', empty:'', empty:'', empty:'', text:'Oil', number:3.0, empty:'']
+[26/Jun/2017 22:11:53] DEBUG [core.context_processors:9] Inside Context Processor constants
+[26/Jun/2017 22:11:54] DEBUG [core.views.data_file:79] <WSGIRequest: GET '/datafiles/json'>
+[26/Jun/2017 22:11:54] DEBUG [core.views.data_file:103] start 1 length 10 page 1
+[26/Jun/2017 22:11:59] DEBUG [core.views.data_file:141] Inside data file upload
+[26/Jun/2017 22:11:59] DEBUG [core.views.data_file:142] <WSGIRequest: POST '/datafiles/upload'>
+[26/Jun/2017 22:11:59] DEBUG [core.views.data_file:147] Received file: sample_test.xlsx
+[26/Jun/2017 22:11:59] DEBUG [core.views.data_file:153] Parsing primer pair file
+[26/Jun/2017 22:11:59] DEBUG [core.services.data_file_service:18] 0 name
+[26/Jun/2017 22:11:59] DEBUG [core.services.data_file_service:18] 1 status
+[26/Jun/2017 22:11:59] DEBUG [core.services.data_file_service:18] 2 lot
+[26/Jun/2017 22:11:59] DEBUG [core.services.data_file_service:18] 3 description
+[26/Jun/2017 22:11:59] DEBUG [core.services.data_file_service:18] 4 volume
+[26/Jun/2017 22:11:59] DEBUG [core.services.data_file_service:18] 5 concentration
+[26/Jun/2017 22:11:59] DEBUG [core.services.data_file_service:18] 6 concentration_units
+[26/Jun/2017 22:11:59] DEBUG [core.services.data_file_service:18] 7 material
+[26/Jun/2017 22:11:59] DEBUG [core.services.data_file_service:18] 8 unit_count
+[26/Jun/2017 22:11:59] DEBUG [core.services.data_file_service:18] 9 comments
+[26/Jun/2017 22:11:59] DEBUG [core.services.data_file_service:34] {'name': 0, 'status': 1, 'lot': 2, 'description': 3, 'volume': 4, 'concentration': 5, 'concentration_units': 6, 'material': 7, 'unit_count': 8, 'comments': 9}
+[26/Jun/2017 22:11:59] DEBUG [core.services.data_file_service:38] [text:'sample_1', text:'active', text:'x', empty:'', text:'5 mL', empty:'', empty:'', empty:'', empty:'', text:'sample_1 comment']
+[26/Jun/2017 22:11:59] DEBUG [core.services.data_file_service:38] [text:'sample_2', text:'active', text:'x', text:'no other data', empty:'', empty:'', empty:'', empty:'', empty:'', empty:'']
+[26/Jun/2017 22:11:59] DEBUG [core.services.data_file_service:38] [text:'sample_3', text:'active', text:'y', empty:'', empty:'', empty:'', empty:'', empty:'', empty:'', text:'sample_3 has some comments too']
+[26/Jun/2017 22:11:59] DEBUG [core.services.data_file_service:38] [text:'sample_4', text:'active', text:'y', empty:'', empty:'', empty:'', empty:'', text:'Oil', number:3.0, empty:'']
+[26/Jun/2017 22:11:59] DEBUG [core.views.data_file:79] <WSGIRequest: GET '/datafiles/json'>
+[26/Jun/2017 22:11:59] DEBUG [core.views.data_file:103] start 1 length 10 page 1
+[26/Jun/2017 22:13:04] DEBUG [core.context_processors:9] Inside Context Processor constants
+[26/Jun/2017 22:13:05] DEBUG [core.views.data_file:79] <WSGIRequest: GET '/datafiles/json'>
+[26/Jun/2017 22:13:05] DEBUG [core.views.data_file:103] start 1 length 10 page 1
+[26/Jun/2017 22:13:23] DEBUG [core.views.data_file:141] Inside data file upload
+[26/Jun/2017 22:13:23] DEBUG [core.views.data_file:142] <WSGIRequest: POST '/datafiles/upload'>
+[26/Jun/2017 22:13:23] DEBUG [core.views.data_file:147] Received file: sample_test.xlsx
+[26/Jun/2017 22:13:23] DEBUG [core.views.data_file:153] Parsing primer pair file
+[26/Jun/2017 22:13:23] DEBUG [core.services.data_file_service:18] 0 name
+[26/Jun/2017 22:13:23] DEBUG [core.services.data_file_service:18] 1 status
+[26/Jun/2017 22:13:23] DEBUG [core.services.data_file_service:18] 2 lot
+[26/Jun/2017 22:13:23] DEBUG [core.services.data_file_service:18] 3 description
+[26/Jun/2017 22:13:23] DEBUG [core.services.data_file_service:18] 4 volume
+[26/Jun/2017 22:13:23] DEBUG [core.services.data_file_service:18] 5 concentration
+[26/Jun/2017 22:13:23] DEBUG [core.services.data_file_service:18] 6 concentration_units
+[26/Jun/2017 22:13:23] DEBUG [core.services.data_file_service:18] 7 material
+[26/Jun/2017 22:13:23] DEBUG [core.services.data_file_service:18] 8 unit_count
+[26/Jun/2017 22:13:23] DEBUG [core.services.data_file_service:18] 9 comments
+[26/Jun/2017 22:13:23] DEBUG [core.services.data_file_service:34] {'name': 0, 'status': 1, 'lot': 2, 'description': 3, 'volume': 4, 'concentration': 5, 'concentration_units': 6, 'material': 7, 'unit_count': 8, 'comments': 9}
+[26/Jun/2017 22:13:23] DEBUG [core.services.data_file_service:38] [text:'sample_1', text:'active', text:'x', empty:'', text:'5 mL', empty:'', empty:'', empty:'', empty:'', text:'sample_1 comment']
+[26/Jun/2017 22:13:23] DEBUG [core.services.data_file_service:38] [text:'sample_2', text:'active', text:'x', text:'no other data', empty:'', empty:'', empty:'', empty:'', empty:'', empty:'']
+[26/Jun/2017 22:13:23] DEBUG [core.services.data_file_service:38] [text:'sample_3', text:'active', text:'y', empty:'', empty:'', empty:'', empty:'', empty:'', empty:'', text:'sample_3 has some comments too']
+[26/Jun/2017 22:13:23] DEBUG [core.services.data_file_service:38] [text:'sample_4', text:'active', text:'y', empty:'', empty:'', empty:'', empty:'', text:'Oil', number:3.0, empty:'']
+[26/Jun/2017 22:13:23] DEBUG [core.views.data_file:79] <WSGIRequest: GET '/datafiles/json'>
+[26/Jun/2017 22:13:23] DEBUG [core.views.data_file:103] start 1 length 10 page 1
+[26/Jun/2017 22:13:34] DEBUG [core.context_processors:9] Inside Context Processor constants
+[26/Jun/2017 22:13:35] DEBUG [core.views.data_file:79] <WSGIRequest: GET '/datafiles/json'>
+[26/Jun/2017 22:13:35] DEBUG [core.views.data_file:103] start 1 length 10 page 1
+[26/Jun/2017 22:14:12] DEBUG [core.views.data_file:141] Inside data file upload
+[26/Jun/2017 22:14:12] DEBUG [core.views.data_file:142] <WSGIRequest: POST '/datafiles/upload'>
+[26/Jun/2017 22:14:12] DEBUG [core.views.data_file:147] Received file: sample_test.xlsx
+[26/Jun/2017 22:14:12] DEBUG [core.views.data_file:153] Parsing primer pair file
+[26/Jun/2017 22:14:12] DEBUG [core.services.data_file_service:18] 0 name
+[26/Jun/2017 22:14:12] DEBUG [core.services.data_file_service:18] 1 status
+[26/Jun/2017 22:14:12] DEBUG [core.services.data_file_service:18] 2 lot
+[26/Jun/2017 22:14:12] DEBUG [core.services.data_file_service:18] 3 description
+[26/Jun/2017 22:14:12] DEBUG [core.services.data_file_service:18] 4 volume
+[26/Jun/2017 22:14:12] DEBUG [core.services.data_file_service:18] 5 concentration
+[26/Jun/2017 22:14:12] DEBUG [core.services.data_file_service:18] 6 concentration_units
+[26/Jun/2017 22:14:12] DEBUG [core.services.data_file_service:18] 7 material
+[26/Jun/2017 22:14:12] DEBUG [core.services.data_file_service:18] 8 unit_count
+[26/Jun/2017 22:14:12] DEBUG [core.services.data_file_service:18] 9 comments
+[26/Jun/2017 22:14:12] DEBUG [core.services.data_file_service:34] {'name': 0, 'status': 1, 'lot': 2, 'description': 3, 'volume': 4, 'concentration': 5, 'concentration_units': 6, 'material': 7, 'unit_count': 8, 'comments': 9}
+[26/Jun/2017 22:14:12] DEBUG [core.services.data_file_service:38] [text:'sample_1', text:'active', text:'x', empty:'', text:'5 mL', empty:'', empty:'', empty:'', empty:'', text:'sample_1 comment']
+[26/Jun/2017 22:14:12] DEBUG [core.services.data_file_service:38] [text:'sample_2', text:'active', text:'x', text:'no other data', empty:'', empty:'', empty:'', empty:'', empty:'', empty:'']
+[26/Jun/2017 22:14:12] DEBUG [core.services.data_file_service:38] [text:'sample_3', text:'active', text:'y', empty:'', empty:'', empty:'', empty:'', empty:'', empty:'', text:'sample_3 has some comments too']
+[26/Jun/2017 22:14:12] DEBUG [core.services.data_file_service:38] [text:'sample_4', text:'active', text:'y', empty:'', empty:'', empty:'', empty:'', text:'Oil', number:3.0, empty:'']
+[26/Jun/2017 22:14:12] DEBUG [core.views.data_file:79] <WSGIRequest: GET '/datafiles/json'>
+[26/Jun/2017 22:14:12] DEBUG [core.views.data_file:103] start 1 length 10 page 1
+[26/Jun/2017 22:14:31] DEBUG [core.context_processors:9] Inside Context Processor constants
+[26/Jun/2017 22:14:38] DEBUG [core.context_processors:9] Inside Context Processor constants
+[26/Jun/2017 22:14:39] DEBUG [core.views.data_file:79] <WSGIRequest: GET '/datafiles/json'>
+[26/Jun/2017 22:14:39] DEBUG [core.views.data_file:103] start 1 length 10 page 1
+[26/Jun/2017 22:15:17] DEBUG [core.context_processors:9] Inside Context Processor constants

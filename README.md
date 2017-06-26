@@ -94,3 +94,14 @@ Password:
 Password (again): 
 Superuser created successfully.
 ```
+
+Load Initial Data
+-----------------
+
+If you want the initial data then do the following.
+
+```
+./manage loaddata initial_data
+```
+
+Feel free to edit the file to create different initial data (sample types etc.)

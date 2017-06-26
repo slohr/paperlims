@@ -2,7 +2,7 @@
     var csrftoken = Cookie.get('csrftoken');
 
     $.ajax({
-        url: Urls.experiment_unlock(object.id),
+        url: Urls.sample_unlock(object.id),
         type: 'POST',
         beforeSend: function(xhr) {
             xhr.setRequestHeader("X-CSRFToken", csrftoken);
@@ -18,10 +18,10 @@
   }
 
   function lock() {
-    var csrftoken = Cookies.get('csrftoken');
+    var csrftoken = $.cookie('csrftoken');
 
     $.ajax({
-        url: Urls.experiment.lock(object.id),
+        url: Urls.sample.lock(object.id),
         type: 'POST',
         beforeSend: function(xhr) {
             xhr.setRequestHeader("X-CSRFToken", csrftoken);

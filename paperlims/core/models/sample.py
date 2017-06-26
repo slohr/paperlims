@@ -11,6 +11,7 @@ from core.models import Note
 
 from django.contrib.auth.models import User
 from django.contrib.contenttypes import fields
+from django.core.urlresolvers import reverse
 
 from django.db import connection
 
@@ -28,7 +29,7 @@ class Sample(PolymorphicModel, CaseInsensitiveNamedModel):
   STATUSES = utils.self_zip(constants.STANDARD_STATUSES)
   sample_type = models.ForeignKey(SampleType)
   material = models.ForeignKey(Material)
-  status = models.CharField(max_length=255,choices=STATUSES)
+  status = models.CharField(max_length=255,choices=STATUSES,default=constants.STATUS_ACTIVE)
   owner = models.ForeignKey(User,null=True,blank=True)
 
   source = models.ForeignKey(Source,null=True,blank=True)
@@ -67,6 +68,9 @@ class Sample(PolymorphicModel, CaseInsensitiveNamedModel):
     if not self.name:
         self.name = Sample.name_generator()
     super(Sample, self).save(*args, **kwargs)
+
+  def get_absolute_url(self):
+        return reverse('samples-detail', kwargs={'pk': self.pk})
 
   def __str__(self):
     return self.name

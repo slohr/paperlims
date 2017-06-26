@@ -3,6 +3,8 @@ from rest_framework import serializers
 from core.models import Experiment
 from core.models import Project
 from core.models import SiteMessage
+from core.models import Sample
+from core.models import DataFile
 
 ################################
 #
@@ -27,6 +29,19 @@ class ProjectSerializer(serializers.ModelSerializer):
         fields = ('__all__')
         depth = 3
 
+
+class SampleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Sample
+        fields = ('__all__')
+        depth = 5
+
+
+class DataFileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DataFile
+        fields = ('__all__')
+        depth = 5
 
 ################################
 #

@@ -13,3 +13,7 @@ pip-selfcheck.json
 __pycache__
 
 settings.py
+
+
+#running app stuff
+logs

@@ -2,21 +2,21 @@
 {% load staticfiles %}
 
 {% block title %}
-Project: {{ object.id }}
+Sample: {{ object.id }}
 {% endblock %}
 
 {% block custom-js %}
     {{ block.super }}
-    <script src="{% static 'core/js/projects/detail.js' %}" type="text/javascript"></script>
+    <script src="{% static 'core/js/samples/detail.js' %}" type="text/javascript"></script>
 {% endblock %}
 
-{% block navstop %}projects{% endblock %}
+{% block navstop %}samples{% endblock %}
 
 {% block content %}
 
   <ol class="breadcrumb">
     <li><a href="{% url 'index' %}">Home</a></li>
-    <li><a href="{% url 'projects-list' %}">Projects</a></li>
+    <li><a href="{% url 'samples-list' %}">Samples</a></li>
     <li class="active">{{ object.name }}</li>
   </ol>
 
@@ -42,7 +42,7 @@ Project: {{ object.id }}
 
                 </h3>
               {% if object.status == constants.STATUS_ACTIVE or user.is_superuser%}
-                <a class="btn btn-default btn-sm pull-right" href="{% url 'projects-edit' object.id%}">Edit</a>
+                <a class="btn btn-default btn-sm pull-right" href="{% url 'samples-edit' object.id%}">Edit</a>
               {% else %}
                 <a class="btn btn-warning btn-sm pull-right">Admin Must Edit</a>
               {% endif %}
@@ -70,40 +70,12 @@ Project: {{ object.id }}
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#experiments-tab" role="tab" data-toggle="tab">Experiments</a></li>
-  <li><a href="#attachments-tab" role="tab" data-toggle="tab">Attachments</a></li>
+  <li class="active"><a href="#attachments-tab" role="tab" data-toggle="tab">Attachments</a></li>
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
-  <div class="tab-pane fade in active" id="experiments-tab">
-        <div class="panel panel-default">
-            <div class="panel-heading clearfix">
-                <h3 class="panel-title pull-left" style="padding-top:7.5px;">
-                    Experiments
-                </h3>
-
-              {% if object.status == "active" %}
-                <a class="btn btn-default btn-sm pull-right" href="#">Create</a>
-              {% endif %}
-
-            </div>
-          <div class="panel-body">
-                <table class="table" id="experiments-table">
-                    <thead>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th>Date Created</th>
-                        <th></th>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-  </div><!-- experiments tab -->
-  <div class="tab-pane fade in" id="attachments-tab">
+  <div class="tab-pane fade in active" id="attachments-tab">
         <div class="panel panel-default">
             <div class="panel-heading clearfix">
                 <h3 class="panel-title pull-left" style="padding-top:7.5px;">
@@ -127,14 +99,9 @@ Project: {{ object.id }}
   </div><!-- attachments tab -->
 </div>
 
-<div id="dialog-confirm-delete-projectanalysis" title="Delete Analysis?" style="display:none;">
-  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
-    <div>Project Analysis: <span id="analysis-name"></span></div>
-    <div class="alert alert-danger">Danger! If there are data files and output under this analysis, they will <strong>also</strong> be deleted.</div>
-</div>
 
 <br>
 	{% else %}
-		<h1>Missing Project!</h1>
+		<h1>Missing Sample!</h1>
 	{% endif %}
 {% endblock %}

@@ -306,7 +306,6 @@ TODO(slohr): figure this out
   -o-transition: opacity 0.3s ease-in-out;
   -ms-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
-  background-image: url("../images/spritemap.png");
   background-repeat: no-repeat;
   background-position: 0 0;
   position: absolute;
@@ -319,7 +318,6 @@ TODO(slohr): figure this out
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
   .dropzone .dz-default.dz-message {
-    background-image: url("../images/spritemap@2x.png");
     -webkit-background-size: 428px 406px;
     -moz-background-size: 428px 406px;
     background-size: 428px 406px;
@@ -388,7 +386,6 @@ TODO(slohr): figure this out
   -o-transition: opacity 0.4s ease-in-out;
   -ms-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
-  background-image: url("../images/spritemap.png");
   background-repeat: no-repeat;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
@@ -396,7 +393,6 @@ TODO(slohr): figure this out
   .dropzone-previews .dz-preview .dz-error-mark,
   .dropzone .dz-preview .dz-success-mark,
   .dropzone-previews .dz-preview .dz-success-mark {
-    background-image: url("../images/spritemap@2x.png");
     -webkit-background-size: 428px 406px;
     -moz-background-size: 428px 406px;
     background-size: 428px 406px;
@@ -414,7 +410,8 @@ TODO(slohr): figure this out
 }
 .dropzone .dz-preview .dz-success-mark,
 .dropzone-previews .dz-preview .dz-success-mark {
-  background-position: -268px -163px;
+  background-position: -258px -153px;
+  /*background-position: -268px -163px;*/
 }
 .dropzone .dz-preview .dz-progress .dz-upload,
 .dropzone-previews .dz-preview .dz-progress .dz-upload {
@@ -435,14 +432,12 @@ TODO(slohr): figure this out
   left: 0;
   width: 0%;
   height: 100%;
-  background-image: url("../images/spritemap.png");
   background-repeat: repeat-x;
   background-position: 0px -400px;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
   .dropzone .dz-preview .dz-progress .dz-upload,
   .dropzone-previews .dz-preview .dz-progress .dz-upload {
-    background-image: url("../images/spritemap@2x.png");
     -webkit-background-size: 428px 406px;
     -moz-background-size: 428px 406px;
     background-size: 428px 406px;
