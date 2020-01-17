@@ -16,4 +16,4 @@ settings.py
 
 
 #running app stuff
-logs
+paperlims/paperlims/core/logs

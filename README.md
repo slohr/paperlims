@@ -45,19 +45,6 @@ Install these reqs
 pip install -r requirements.txt
 ```
 
-Create the project
-
-```
-django-admin startproject paperlims
-```
-
-Now create the core app
-
-```
-cd paperlims
-./manage.py startapp core
-```
-
 Create the Postgres DB
 
 if using a local Postgres database
@@ -73,7 +60,6 @@ You should be able to connect like so
 ```
 psql -U paperplane paperlims -P
 ```
-
 
 Initialize DB
 -------------
